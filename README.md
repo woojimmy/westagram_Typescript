@@ -1,17 +1,14 @@
-# Westagram_Vanilla_JS
+# Westagram_Typescript
 
 ## Description
 
 - Description : This is a private project to implement SNS(Social Network Service)
 - Reference : Instagram
-- Period : 2022.11.08 ~ 2022.11.18 (about 10 days)
+- Period : 2023.03.16 ~ 
 
 ## Info
 
-|                                                                                                                                                     Stack                                                                                                                                                     |                        How to use                        |
-| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/109689216/222891136-a66b713a-5644-4ac1-b210-4a14807500d0.png" alt="icon" width="65" height="65" /> <img src="https://user-images.githubusercontent.com/109689216/222891168-b4035c40-543c-4da6-a034-6d346a353fea.png" alt="icon" width="65" height="65" /> | Bulid structure by `HTML` <br> Adapt stylesheet by `CSS` |
-|                                                                            <img src="https://user-images.githubusercontent.com/109689216/222891261-f2f9bb77-bb2f-4346-a93a-4db33e4b853c.png" alt="icon" width="65" height="65" />                                                                             |         Implement functions by `Javascript` only         |
+
 
 There are not server because this project is to learn how to use javascript without any library or framework, such as React, Angular, etc.
 <br>
@@ -23,8 +20,9 @@ The design factors and layouts of pages refered to developer tools of reference 
 
 ## Features
 
-- Login
-- View feeds
-- Add ,remove comments
-- Click and count likes
-- Search account in the list
+Complete to convert from Javascript to Typescript
+- [X] Login
+- [ ] View feeds
+- [ ] Add ,remove comments
+- [ ] Click and count likes
+- [ ] Search account in the list
