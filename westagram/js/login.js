@@ -1,46 +1,31 @@
-let loginInputId = document.getElementById("idInput");
-let loginInputPw = document.getElementById("pwInput");
-let loginBtnElement = document.getElementById("loginBtn");
-
-document.addEventListener("keyup", () => {
-  let loginInputIDField = loginInputId.value;
-  let loginInputPWField = loginInputPw.value;
-  const checkEMail = loginInputIDField.indexOf("@");
-
-  if (loginInputIDField.length > 0 && loginInputPWField.length > 4) {
-    if (checkEMail !== -1) {
-      loginBtnElement.classList.add("active");
-      loginBtnElement.style;
-    } else {
-      // discard 'active state' when `@` disappeared
-      loginBtnElement.classList.remove("active");
+var loginInputId = document.getElementById("idInput");
+var loginInputPw = document.getElementById("pwInput");
+var loginBtnElement = document.getElementById("loginBtn");
+var emailRegEx = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+var passwordRegEx = /^([-_\.]?[0-9a-zA-Z]){1,8}$/;
+document.addEventListener("keydown", function () {
+    var loginInputIDField = loginInputId.value;
+    var loginInputPWField = loginInputPw.value;
+    if (loginInputIDField.match(emailRegEx) &&
+        loginInputPWField.match(passwordRegEx)) {
+        loginBtnElement.classList.add("active");
+        loginBtnElement.disabled = false;
     }
-  } else {
-    // discard 'active state' when password.length is less than 5
-    loginBtnElement.classList.remove("active");
-  }
+    else {
+        loginBtnElement.classList.remove("active");
+        loginBtnElement.disabled = true;
+    }
 });
-
-// click event - pop up alert
 loginBtnElement.addEventListener("click", function (e) {
-  e.preventDefault();
-  let loginInputIDField = loginInputId.value;
-  let loginInputPWField = loginInputPw.value;
-
-  const checkEMail = loginInputIDField.indexOf("@");
-  if (loginInputIDField.length == 0) {
-    alert("사용자 이메일을 입력해주세요.");
-  } else if (checkEMail == -1) {
-    alert("올바른 이메일을 입력해주세요.");
-  } else if (loginInputPWField.length == 0) {
-    alert("비밀번호를 입력해주세요.");
-  } else if (loginInputPWField.length < 5) {
-    alert("비밀번호는 5자 이상입니다. 다시 입력해주세요.");
-  } else {
-    loginToMainPage();
-  }
+    e.preventDefault();
+    var loginInputIDField = loginInputId.value;
+    var loginInputPWField = loginInputPw.value;
+    if (loginInputIDField.match(emailRegEx) &&
+        loginInputPWField.match(passwordRegEx)) {
+        alert("로그인 성공!");
+        loginToMainPage();
+    }
 });
-
-const loginToMainPage = () => {
-  window.location.href = "/students/40th/woojin/main.html";
+var loginToMainPage = function () {
+    window.location.href = "/westagram/main.html";
 };
